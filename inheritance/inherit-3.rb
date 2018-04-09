@@ -24,48 +24,37 @@
 # completeAddress -> #96, Railway Layout, Vijaynagar
 # 									Mysore
 # 									India
+class Member
 
+		def initialize(countryName,cityName,streetAddress,completeAddress)
 
-class Country
-	def initialize
-		puts "This is the Country."
-	end
-
-	def countryName 
-	 # give the country name.
-	end
+			puts @countryName=countryName
+		  puts @cityName=cityName
+	    puts @streetAddress=streetAddress
+	 	  puts @completeAddress=completeAddress
+		end
 end
 
-class City
-	def initialize
-		puts "This is the City"
+class Person < Member
+
+	def coun
+		@countryName
 	end
 
-	# define cityName  --> give the city name
-end
-
-
-class Address < Country
-	def initialize
-		puts "This is my address."
+	def city
+		@cityName
 	end
 
-	# define completeAddress --> complete address. 
-
-end
-
-class Number < City
-	def initialize
-		puts "This is my address."
+	def str
+		@streetAddress
 	end
 
-	# define streetAddress --> '#96, Railway Layout, Vijaynagar'
-
-	def completeAddress
-		puts streetAddress cityName countryName 
+	def com
+		@completeAddress
 	end
 end
-
-
-
-# instantiate a object and check for all address.
+m=Member.new("india","mys","#96, Railway Layout, Vijaynagar","#96, Railway Layout, Vijaynagar, Mysore, India")
+m.coun
+m.city
+m.str
+m.com
