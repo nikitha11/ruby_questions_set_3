@@ -24,37 +24,41 @@
 # completeAddress -> #96, Railway Layout, Vijaynagar
 # 									Mysore
 # 									India
-class Member
+class Country
 
-		def initialize(countryName,cityName,streetAddress,completeAddress)
-
-			puts @countryName=countryName
-		  puts @cityName=cityName
-	    puts @streetAddress=streetAddress
-	 	  puts @completeAddress=completeAddress
+		def countryn
+			@countryname="india"
+			puts "country: #{@countryname}"
 		end
 end
 
-class Person < Member
+class City<Country
 
-	def coun
-		@countryName
-	end
-
-	def city
-		@cityName
-	end
-
-	def str
-		@streetAddress
-	end
-
-	def com
-		@completeAddress
-	end
+		def ci
+			@cityy="mys"
+			puts "city:#{@cityy}"
+		end
 end
-m=Member.new("india","mys","#96, Railway Layout, Vijaynagar","#96, Railway Layout, Vijaynagar, Mysore, India")
-m.coun
-m.city
-m.str
-m.com
+
+class Street<City
+
+		def str
+			@streetAddress= "#96, Railway Layout, Vijaynagar"
+			puts "streetadd:#{@streetAddress}"
+		end
+end
+
+class Adr<Street
+	def a
+		countryn
+		ci
+		str
+		puts "complete address: #{@streetAddress}, #{@cityy}, #{@countryname}"
+end
+end
+
+c=Adr.new
+c.a
+
+
+# multilevel inheritance....where complete add shd be concatinated from rest 3.....so here v hv to use multilevel only 

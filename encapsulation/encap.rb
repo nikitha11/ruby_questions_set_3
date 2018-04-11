@@ -17,51 +17,41 @@
 	# output --> This is a Personal Chat
 						 	 # Hi, how are you?
 
-	# client should not be able to call the secureChat 
+	# client is a object of user and should not be able to call the secureChat 
 
 class Message
 	def initialize
 		puts " 'Hi friends' to the public group"
 	end
 
-	 # def sendPersonalMessage 
-	 # 	puts "which calls the personalChat"
-
 	def groupChat(message)
 		puts "This is a Public Group"
-		puts "hi friends"
-		# personalChat
-		# secureChat	
-
+		puts message
 	end
 
 	private
 	# The User should not access the secure Chat through its object--> this is confidentials
 	def secureChat(message)
-		puts "This is a secure Chat"
-		puts message
+		
 	end
 
 	protected
 	# The user can access this method throught its user class method 
 	def personalChat(message)
 		puts "This is a Personal Chat"
-		puts "hi how u?"
-	end
+		puts message
+	
 end
-mes=Message.new
-mes.groupChat("This is a Public Group")
-
+end
 class User < Message
-	def initialize
-		puts "Welcome User"
-	end
-
+	
+	private
 	 def sendSecureMessage(message)
 	  	secureChat("This is confidential")
 	  end
 
-	def sendPersonalMessage(message)
+	  public
+	  def sendPersonalMessage
 		personalChat("Hi, how are you?")
 	end
 end
@@ -69,6 +59,10 @@ end
 
 
 client = User.new
-client.sendPersonalMessage("Hi, how are you?")
-# client.sendSecureMessage("hi")
+client.groupChat("hi frd")  
+ # {am calling public with the help of client obj of user}
+client.sendPersonalMessage     
+#{am claiing protected through the public with the hrlp of client obj}
+client.sendSecureMessage("ho")
 
+# {here am calling private method directly without specifying in public so v get error}

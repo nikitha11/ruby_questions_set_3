@@ -98,51 +98,44 @@
 # ee.c
 # ee.d
 # ee.e
+class Emp
 
-class President
-
-
-	def pre
-		puts "Enter the firstname"
-	  a = gets.to_s
-
-	  puts "Enter the lastname"
-	  b = gets.to_s
-	
-	  puts "Enter the age"
-	  c = gets.to_i
-	 
-	  puts "Enter the city"
-	  d = gets.to_s
-	  puts "Enter the state"
-	  e = gets.to_s
-	
+	def show
+		  puts "enter firstname"
+			@firstname= gets.chomp
+			puts "enter lastname"
+			@lastname = gets.chomp
+			puts "enter the age"
+			@age = gets.to_i
+			puts "enter the city"
+			@city = gets.chomp
+			puts "enter the state"
+			@state = gets.chomp
 	end
 end
-class Staff
-	def press
-		puts "Enter the firstname"
-	  a = gets.to_s
 
-	  puts "Enter the lastname"
-	  b = gets.to_s
+class President<Emp
 
-	  puts "Enter the age"
-	  c = gets.to_i
-	 
-	  puts "Enter the city"
-	  d = gets.to_s
-
-	  puts "Enter the state"
-	  e = gets.to_s
-
-	end
+		def display
+			puts "president details"
+			show
+			puts "name:#{@firstname} #{@lastname}"
+			puts "age:#{@age}"
+			puts "city:#{@city} state:#{@state}"
+			puts "******************************************"
+		end
+end
+class Staff<Emp
+		def dis
+			puts "staff details"
+			show
+			puts "name:#{@firstname} #{@lastname}"
+			puts "age:#{@age}"
+			puts "city:#{@city} state:#{@state}"
+		end
 end
 p=President.new
-p.pre
-puts "staff"
-pp=Staff.new
-pp. press
-# e=Emp.new("joe","sim","23,"mys","ind___)
-# e.emp
+p.display
+s=Staff.new
+s.dis
 

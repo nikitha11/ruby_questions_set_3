@@ -6,10 +6,10 @@
 begin
 	puts "welcome"
 	puts "Enter the first num"
-	a = gets.to_i
+	a = Integer(gets)
 	puts "You Entered #{a}"
 	puts "Enter the sec num"
-	b = gets.to_i
+	b = Integer(gets)
 	puts "You Entered #{b}"
 	c = a+b
 	puts "result is #{c}"
